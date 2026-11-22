@@ -38,6 +38,19 @@ class Array:
         self.Memory[self._size] = value
         self._size+=1  
 
+
+    def inseration(self, index, value):
+        if self._size == self._capacity:
+            self.expand_capacity()
+        for i in range(self._size-1, index-1, -1):
+                if i != index : 
+                    self.Memory[i+1]= self.Memory[i]
+        self.Memory[index]= value
+        self._size +=1
+
+
+        
+
 arr = Array(3)
 
 arr.append(10)
